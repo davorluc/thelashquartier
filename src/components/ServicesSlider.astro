@@ -1,0 +1,44 @@
+---
+const { services = [] } = Astro.props;
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    {services.map(service => (
+      <div class="swiper-slide">
+        <div class="bg-white p-8 rounded-lg border border-gray-200 text-center">
+          <h3 class="text-xl font-serif mb-2">{service.title}</h3>
+          <p class="text-gray-600 mb-4">{service.desc}</p>
+          <p class="text-gray-800 font-medium mb-4">{service.price}</p>
+          <a href="#booking" class="inline-block px-6 py-2 text-sm border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-300 mt-4">Jetzt buchen</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Swiper Navigation Buttons (optional) -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" client:load></script>
+<script client:load>
+  new Swiper(".mySwiper", {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 3.01,
+      },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>

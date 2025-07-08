@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+footer {
+  background: #393E46;
+}
+
+#booking-widget iframe {
+  border-radius: var(--radius-lg);
+}
