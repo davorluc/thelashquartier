@@ -2,6 +2,9 @@
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 import heroVideo from '../assets/hero.mp4';
+import aboutMeImg from '../assets/celina-1.jpeg';
+console.log("aboutMeImg", aboutMeImg);
+import { Image } from 'astro:assets';
 import { services } from '../data/services.js'; 
 import ServiceCard from './ServiceCard.astro';
 
@@ -35,7 +38,6 @@ import ServiceSlider from './ServicesSlider.astro';
    </div>
 </nav>
 <!-- Hero Section -->
-<!-- Hero Section -->
 <section id="home" class="relative h-[80vh] flex items-center justify-center text-center pt-20 overflow-hidden">
    <!-- Background Video -->
    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
@@ -57,17 +59,18 @@ import ServiceSlider from './ServicesSlider.astro';
       <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Über Mich</h2>
       <div class="flex flex-col md:flex-row items-center gap-12">
          <div class="md:w-1/2">
-            <div class="overflow-hidden rounded-lg">
-               <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" 
+            <div class="rounded-lg flex justify-center">
+               <Image src={aboutMeImg} 
                   alt="Lash Technician" 
-                  class="w-full h-auto object-cover rounded-lg transition duration-500 hover:scale-105">
+                  class="object-cover rounded-lg transition duration-500 hover:scale-105 h-[500px] w-[400px]">
             </div>
          </div>
          <div class="md:w-1/2">
             <h3 class="text-2xl font-serif mb-6">Hallo, ich bin Celina</h3>
-            <p class="mb-4 leading-relaxed">Mit über X Jahren Expertise in der Beauty-Branche habe ich mich auf exklusive Wimpernverlängerungen spezialisiert, die deine natürliche Ausstrahlung auf stilvolle Weise veredeln – für einen Look voller Eleganz und Leichtigkeit.</p>
-            <p class="mb-4 leading-relaxed">Mein Anspruch ist höchste Perfektion bis ins kleinste Detail. Ich arbeite mit ausgesuchten Premium-Produkten, um nicht nur beeindruckende Ergebnisse zu erzielen, sondern auch die Gesundheit deiner natürlichen Wimpern zu bewahren.</p>
-            <p class="mb-6 leading-relaxed">Als zertifizierte Lash-Artistin mit Spezialisierung auf fortgeschrittene Techniken bilde ich mich stetig weiter, um dir moderne, anspruchsvolle Styles auf höchstem Niveau bieten zu können.</p>
+            <p class="mb-4 leading-relaxed">Schon früh habe ich gespürt, wie sehr mich die Beauty-Welt fasziniert – nicht nur optisch, sondern auf einer tiefen, persönlichen Ebene. Schönheit ist für mich viel mehr als ein Look: Sie ist ein Gefühl. Ein Gefühl von Selbstvertrauen, Ausdruck und innerer Stärke.</p>
+            <p class="mb-4 leading-relaxed">Genau deshalb habe ich TheLashQuartier gegründet – um Frauen einen Ort zu bieten, an dem sie nicht nur äußerlich verschönert, sondern auch gesehen und verstanden werden. Mir ist es besonders wichtig, auf jede Kundin individuell einzugehen und mit viel Feingefühl den Look zu kreieren, der wirklich zu ihr passt – ganz ohne Massenabfertigung, sondern mit echter Wertschätzung.</p>
+            <p class="mb-6 leading-relaxed">Ich liebe es, mit Frauen zusammenzuarbeiten, sie zu verschönern und gemeinsam das Beste aus ihnen herauszuholen – authentisch, typgerecht und mit einem sicheren Gespür dafür, was ihre Persönlichkeit unterstreicht. Denn ich bin überzeugt: Beauty ist nichts Oberflächliches – sondern ein Ausdruck von Selbstliebe, Stärke und Identität.</p>
+            <p class="mb-6 leading-relaxed">In meinem Studio erwartet dich ein hohes Maß an Professionalität, Sauberkeit und Qualität. Ich arbeite nur mit ausgewählten Produkten und lege besonderen Wert auf Hygiene und Präzision – weil du das verdienst.</p>
             <div class="flex space-x-4">
                <a href="https://www.instagram.com/thelashquartier/" class="text-gray-600 hover:text-gray-900"><i class="fab fa-instagram text-xl"></i></a>
                <a href="https://www.tiktok.com/@thelashquartier" class="text-gray-600 hover:text-gray-900"><i class="fab fa-tiktok text-xl"></i></a>
@@ -157,7 +160,7 @@ import ServiceSlider from './ServicesSlider.astro';
       <!-- Modal Content -->
       <div class="bg-white rounded-lg w-[90%] relative flex flex-col">
          <div class="bg-white rounded-lg relative p-10 flex flex-col">
-            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
+            <button id="closeModal" class="absolute top-10 right-10 text-gray-500 hover:text-black text-[30px]">&times;</button>
             <h2 class="text-3xl font-serif text-center mb-5 tracking-wider">Einen Termin buchen</h2>
             <p class="text-gray-600 mb-8 text-center">
                Wähle deinen Wunschtermin aus den verfügbaren Zeiten.  
