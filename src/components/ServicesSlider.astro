@@ -2,7 +2,6 @@
 const { services = [] } = Astro.props;
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <div class="swiper mySwiper h-[300px] mb-8">
   <div class="swiper-wrapper">
     {services.map(service => (
@@ -23,7 +22,6 @@ const { services = [] } = Astro.props;
   <div class="swiper-pagination"></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" client:load></script>
 <script client:load>
   new Swiper(".mySwiper", {
     slidesPerView: 1.1,

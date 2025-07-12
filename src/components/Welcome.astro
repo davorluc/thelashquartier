@@ -1,10 +1,15 @@
 ---
 import heroVideo from '../assets/hero.mp4';
 import aboutMeImg from '../assets/celina-1.jpeg';
+import client1 from '../assets/client-1.jpeg';
+import client2 from '../assets/client-2.jpeg';
+import client3 from '../assets/client-3.jpeg';
+import client4 from '../assets/client-4.jpeg';
 import { Image } from 'astro:assets';
 import { services } from '../data/services.js'; 
 
 import ServiceSlider from './ServicesSlider.astro';
+
 ---
 <!-- Navigation -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
@@ -89,49 +94,54 @@ import ServiceSlider from './ServicesSlider.astro';
 </section>
 <!-- Impressions Section -->
 <section id="impressions" class="py-20 bg-gray-50">
-   <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Client Impressions</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+   <div class="container mx-auto px-6 relative">
+      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Impressionen</h2>
+      <div id="image-track" class="image-track flex flex-row" data-mouse-down-at="0" data-prev-percentage="0">
          <!-- Gallery Item 1 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+            <Image src={client1} 
                alt="Classic Lash Extensions" 
-               class="w-full h-80 object-cover gallery-img">
+               draggable="false"
+               class="w-full h-80 gallery-Image">
          </div>
          <!-- Gallery Item 2 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289636be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+            <Image src={client2} 
                alt="Volume Lash Extensions" 
-               class="w-full h-80 object-cover gallery-img">
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
          </div>
          <!-- Gallery Item 3 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" 
+            <Image src={client3} 
                alt="Hybrid Lash Extensions" 
-               class="w-full h-80 object-cover gallery-img">
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
          </div>
          <!-- Gallery Item 4 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1595475034662-5c6a2a0a03c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+            <Image src={client4} 
                alt="Before & After" 
-               class="w-full h-80 object-cover gallery-img">
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
          </div>
          <!-- Gallery Item 5 (Video Placeholder) -->
-         <div class="gallery-item rounded-lg overflow-hidden relative bg-gray-100 flex items-center justify-center">
-            <div class="absolute inset-0 flex items-center justify-center">
-               <i class="fas fa-play-circle text-gray-400 text-5xl"></i>
-            </div>
-            <div class="w-full h-80"></div>
+         <div class="gallery-item rounded-lg overflow-hidden">
+        <video autoplay muted loop playsinline class="w-full h-80 object-cover gallery-Image">
+          <source src={heroVideo} type="video/mp4" />
+          Dein Browser unterstützt keine HTML5-Videos.
+        </video>
          </div>
          <!-- Gallery Item 6 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+            <Image src={client1} 
                alt="Mega Volume Lashes" 
-               class="w-full h-80 object-cover gallery-img">
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
          </div>
       </div>
       <div class="text-center mt-12">
-         <a href="#" class="inline-block px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-300">See More</a>
+         <a href="https://www.instagram.com/thelashquartier/" class="inline-block px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-300" target="_blank" noopener noreferrer>Und noch mehr</a>
       </div>
    </div>
 </section>
@@ -148,7 +158,7 @@ import ServiceSlider from './ServicesSlider.astro';
             <a href="mailto:info@thelashquartier.com" class="text-white hover:text-gray-400 transition duration-200">info@thelashquartier.com</a> -
             <a href="tel:+1234567890" class="text-white hover:text-gray-400 transition duration-200">(123) 456-7890</a>
          </div>
-         <p class="text-white text-sm">© 2025 Lash Boutique. Alle Rechte vorbehalten.</p>
+         <p class="text-white text-sm">© 2025 The Lash Quartier. Alle Rechte vorbehalten.</p>
       </div>
    </div>
    <!-- Modal Overlay -->
@@ -174,21 +184,24 @@ import ServiceSlider from './ServicesSlider.astro';
 </a>
 <script>
 // Mobile Menu Toggle (Slide)
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-let isMenuOpen = false;
-
-mobileMenuButton.addEventListener('click', () => {
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    mobileMenu.classList.remove('max-h-0');
-    mobileMenu.classList.add('max-h-[400px]');
-  } else {
-    mobileMenu.classList.remove('max-h-[400px]');
-    mobileMenu.classList.add('max-h-0');
+  if (!mobileMenuButton || !mobileMenu) {
+    console.warn("Mobile menu elements not found.");
+    return;
   }
+
+  let isMenuOpen = false;
+
+  mobileMenuButton.addEventListener('click', () => {
+    console.log("menu button was clicked!!");
+    isMenuOpen = !isMenuOpen;
+
+    mobileMenu.classList.toggle('max-h-0', !isMenuOpen);
+    mobileMenu.classList.toggle('max-h-[400px]', isMenuOpen);
+  });
 });
    
    // Smooth scrolling for navigation links
@@ -259,4 +272,51 @@ mobileMenuButton.addEventListener('click', () => {
    }
    });
    });
+const track = document.getElementById("image-track");
+const impressions = document.getElementById("impressions");
+
+const handleOnDown = e => {
+  track.dataset.mouseDownAt = e.clientX;
+};
+
+const handleOnUp = () => {
+  track.dataset.mouseDownAt = "0";  
+  track.dataset.prevPercentage = track.dataset.percentage;
+};
+
+const handleOnMove = e => {
+  if (track.dataset.mouseDownAt === "0") return;
+
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+  const maxDelta = window.innerWidth / 2;
+
+  // Sensitivity factor: lower = less extreme movement
+  const sensitivity = window.innerWidth < 1000 ? 0.5 : 1;
+
+  const percentage = (mouseDelta / maxDelta) * -100 * sensitivity;
+  const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage || "0") + percentage;
+  const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+  track.dataset.percentage = nextPercentage;
+
+  track.animate({
+    transform: `translate(${nextPercentage}%, -50%)`
+  }, { duration: 1200, fill: "forwards" });
+
+  for (const image of track.getElementsByClassName("gallery-Image")) {
+    image.animate({
+      objectPosition: `${100 + nextPercentage}% center`
+    }, { duration: 1200, fill: "forwards" });
+  }
+};
+
+// Attach events to #impressions instead of window
+impressions.addEventListener("mousedown", e => handleOnDown(e));
+impressions.addEventListener("touchstart", e => handleOnDown(e.touches[0]));
+
+impressions.addEventListener("mouseup", e => handleOnUp(e));
+impressions.addEventListener("touchend", e => handleOnUp(e.touches[0]));
+
+impressions.addEventListener("mousemove", e => handleOnMove(e));
+impressions.addEventListener("touchmove", e => handleOnMove(e.touches[0]));
 </script>
