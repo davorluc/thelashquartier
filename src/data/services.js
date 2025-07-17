@@ -29,5 +29,13 @@ export const services = [
       { title: "Lippenschattierung", desc: "Für definierte und volle Lippen", price: "300 €" },
       { title: "PMU Remover", desc: "Entfernung unerwünschten Permanent Make-Ups", price: "80 €" }
     ]
-  }
+  },
+  {
+    category: "Schulungen",
+    items: [
+      { title: "The Lash Foundation", desc: "Erlerne alle Grundlagen der Classic Variante.", price: "270 €" },
+      { title: "The Lash Advance", desc: "Erlerne Grundlagen der klassischen sowie Volumenvariante.", price: "300 €" },
+      { title: "The Lash Refinement", desc: "Weiterbildung für Erfahrene Stylistinnen.", price: "80 €" }
+    ]
+  },
 ];

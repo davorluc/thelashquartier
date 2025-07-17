@@ -10,7 +10,7 @@ const { services = [] } = Astro.props;
           <h3 class="text-xl font-serif mb-2">{service.title}</h3>
           <p class="text-gray-600 mb-4">{service.desc}</p>
           <p class="text-gray-800 font-medium mb-4">{service.price}</p>
-          <a id="classic" class="inline-block px-6 py-2 text-sm border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-300 mt-4">Jetzt buchen</a>
+          <a id="classic" class="modal inline-block px-6 py-2 text-sm border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-300 mt-4">Jetzt buchen</a>
         </div>
       </div>
     ))}
@@ -22,8 +22,14 @@ const { services = [] } = Astro.props;
   <div class="swiper-pagination"></div>
 </div>
 
-<script client:load>
+<script>
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
   new Swiper(".mySwiper", {
+    modules: [Navigation, Pagination],
     slidesPerView: 1.1,
     spaceBetween: 20,
     breakpoints: {
