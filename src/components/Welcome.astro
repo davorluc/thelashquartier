@@ -1,10 +1,16 @@
 ---
-import heroVideo from '../assets/hero.mp4';
+import heroImage from '../assets/hero.jpeg';
 import aboutMeImg from '../assets/celina-1.jpeg';
-import client1 from '../assets/client-1.jpeg';
 import client2 from '../assets/client-2.jpeg';
 import client3 from '../assets/client-3.jpeg';
 import client4 from '../assets/client-4.jpeg';
+import impression1 from '../assets/impression-1.jpeg';
+import impression2 from '../assets/impression-2.jpeg';
+import impression3 from '../assets/impression-3.jpeg';
+import impression4 from '../assets/impression-4.jpeg';
+import impression5 from '../assets/impression-5.jpeg';
+import impression6 from '../assets/impression-6.jpeg';
+import logo from '../assets/tlq_logo_highres.png';
 import { Image } from 'astro:assets';
 import { services } from '../data/services.js'; 
 
@@ -14,7 +20,7 @@ import ServiceSlider from './ServicesSlider.astro';
 <!-- Navigation -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-serif tracking-wider">The Lash Quartier</div>
+    <Image src={logo} class="w-[140px]" alt="The Lash Quartier Logo"/>
     <div class="hidden md:flex space-x-8">
       <a href="#home" class="nav-link">Willkommen</a>
       <a href="#about" class="nav-link">Über uns</a>
@@ -41,16 +47,13 @@ import ServiceSlider from './ServicesSlider.astro';
 <!-- Hero Section -->
 <section id="home" class="relative h-[80vh] flex items-center justify-center text-center pt-20 overflow-hidden">
    <!-- Background Video -->
-   <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-      <source src={heroVideo} type="video/mp4" />
-      Dein Browser unterstützt keine HTML5-Videos.
-   </video>
+   <Image src={heroImage} class="absolute inset-0 w-full h-full object-cover z-0" alt="Hero Image of Client that has her lashes done"/>
    <!-- Dark Overlay -->
    <div class="absolute inset-0 bg-black opacity-30"></div>
    <!-- Content -->
    <div class="relative z-20 max-w-3xl px-6 text-white">
-      <h1 class="text-4xl md:text-6xl font-serif font-light mb-6 tracking-wider">Schönheit beginnt mit dem Blick.</h1>
-      <p class="text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">Professionelle Wimpernverlängerungen, die perfekt zu dir passen und deine natürliche Ausstrahlung dezent unterstreichen.</p>
+      <h1 class="text-4xl md:text-6xl font-serif font-light mb-6 tracking-wider">Your Look. Your Lashes.</h1>
+      <p class="text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">Maßgeschneidertes Lash- & Brow Design, präzises Permanent Make-up und hochwertige 1:1 Schulungen.</p>
       <a href="#services" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition duration-300">Jetzt unsere Leistungen entdecken</a>
    </div>
 </section>
@@ -67,11 +70,14 @@ import ServiceSlider from './ServicesSlider.astro';
             </div>
          </div>
          <div class="md:w-1/2">
-            <h3 class="text-2xl font-serif mb-6">Hallo, ich bin Celina</h3>
-            <p class="mb-4 leading-relaxed">Schon früh habe ich gespürt, wie sehr mich die Beauty-Welt fasziniert – nicht nur optisch, sondern auf einer tiefen, persönlichen Ebene. Schönheit ist für mich viel mehr als ein Look: Sie ist ein Gefühl. Ein Gefühl von Selbstvertrauen, Ausdruck und innerer Stärke.</p>
-            <p class="mb-4 leading-relaxed">Genau deshalb habe ich TheLashQuartier gegründet – um Frauen einen Ort zu bieten, an dem sie nicht nur äußerlich verschönert, sondern auch gesehen und verstanden werden. Mir ist es besonders wichtig, auf jede Kundin individuell einzugehen und mit viel Feingefühl den Look zu kreieren, der wirklich zu ihr passt – ganz ohne Massenabfertigung, sondern mit echter Wertschätzung.</p>
-            <p class="mb-6 leading-relaxed">Ich liebe es, mit Frauen zusammenzuarbeiten, sie zu verschönern und gemeinsam das Beste aus ihnen herauszuholen – authentisch, typgerecht und mit einem sicheren Gespür dafür, was ihre Persönlichkeit unterstreicht. Denn ich bin überzeugt: Beauty ist nichts Oberflächliches – sondern ein Ausdruck von Selbstliebe, Stärke und Identität.</p>
-            <p class="mb-6 leading-relaxed">In meinem Studio erwartet dich ein hohes Maß an Professionalität, Sauberkeit und Qualität. Ich arbeite nur mit ausgewählten Produkten und lege besonderen Wert auf Hygiene und Präzision – weil du das verdienst.</p>
+            <h3 class="text-2xl font-serif mb-6">Hi, mein Name ist Celina-Antonia und ich bin Gründerin von The Lash Quartier. </h3>
+            <p class="mb-4 leading-relaxed">Schon früh hat mich die Beauty-Welt fasziniert - nicht nur optisch, sondern auf einer tiefen, persönlichen Ebene. Schönheit ist für mich ein Gefühl von Selbstvertrauen, Ausdruck und innerer Stärke.
+</p>
+            <p class="mb-4 leading-relaxed">Mit The Lash Quartier habe ich einen Ort geschaffen, an dem Frauen sich nicht nur verschönern lassen, sondern auch verstanden fühlen.
+Jeder Look entsteht individuell – mit Feingefühl, Präzision und einer typgerechten Analyse deiner Augen- und Gesichtsform.</p>
+            <p class="mb-6 leading-relaxed">Mein Ziel ist es nicht, dich zu verändern, sondern deine natürliche Schönheit gezielt zu unterstreichen. Denn wir strahlen am meisten, wenn unser Inneres mit unserem Äußeren im Einklang ist.</p>
+            <p class="mb-6 leading-relaxed">In meinem Studio erwarten dich Qualität, Hygiene und echte Professionalität. Ich freue mich darauf, gemeinsam mit dir das Schönste aus dir herauszuholen. 
+</p>
             <div class="flex space-x-4">
                <a href="https://www.instagram.com/thelashquartier/" class="text-gray-600 hover:text-gray-900" aria-label="Instagram – The Lash Quartier"><i class="fab fa-instagram text-xl"></i></a>
                <a href="https://www.tiktok.com/@thelashquartier" class="text-gray-600 hover:text-gray-900" aria-label="TikTok – The Lash Quartier"><i class="fab fa-tiktok text-xl"></i></a>
@@ -97,44 +103,56 @@ import ServiceSlider from './ServicesSlider.astro';
    <div class="container mx-auto px-6 relative">
       <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Impressionen</h2>
       <div id="image-track" class="image-track flex flex-row" data-mouse-down-at="0" data-prev-percentage="0">
-         <!-- Gallery Item 1 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <Image src={client1} 
-               alt="Classic Lash Extensions" 
-               draggable="false"
-               class="w-full h-80 gallery-Image">
-         </div>
-         <!-- Gallery Item 2 -->
-         <div class="gallery-item rounded-lg overflow-hidden">
-            <Image src={client2} 
-               alt="Volume Lash Extensions" 
+            <Image src={impression1} 
+               alt="Mega Volume Lashes" 
                draggable="false"
                class="w-full h-80 object-cover gallery-Image">
          </div>
-         <!-- Gallery Item 3 -->
+         <div class="gallery-item rounded-lg overflow-hidden">
+            <Image src={impression2} 
+               alt="Mega Volume Lashes" 
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
+         </div>
          <div class="gallery-item rounded-lg overflow-hidden">
             <Image src={client3} 
-               alt="Hybrid Lash Extensions" 
+               alt="Mega Volume Lashes" 
                draggable="false"
                class="w-full h-80 object-cover gallery-Image">
          </div>
-         <!-- Gallery Item 4 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <Image src={client4} 
-               alt="Before & After" 
+            <Image src={client2} 
+               alt="Mega Volume Lashes" 
                draggable="false"
                class="w-full h-80 object-cover gallery-Image">
          </div>
-         <!-- Gallery Item 5 (Video Placeholder) -->
          <div class="gallery-item rounded-lg overflow-hidden">
-        <video autoplay muted loop playsinline class="w-full h-80 object-cover gallery-Image">
-          <source src={heroVideo} type="video/mp4" />
-          Dein Browser unterstützt keine HTML5-Videos.
-        </video>
+            <Image src={impression5} 
+               alt="Mega Volume Lashes" 
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
          </div>
-         <!-- Gallery Item 6 -->
          <div class="gallery-item rounded-lg overflow-hidden">
-            <Image src={client1} 
+            <Image src={impression3} 
+               alt="Mega Volume Lashes" 
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
+         </div>
+         <div class="gallery-item rounded-lg overflow-hidden">
+           <Image src={client4} 
+               alt="Mega Volume Lashes" 
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
+         </div>
+         <div class="gallery-item rounded-lg overflow-hidden">
+            <Image src={impression4} 
+               alt="Mega Volume Lashes" 
+               draggable="false"
+               class="w-full h-80 object-cover gallery-Image">
+         </div>
+         <div class="gallery-item rounded-lg overflow-hidden">
+            <Image src={impression6} 
                alt="Mega Volume Lashes" 
                draggable="false"
                class="w-full h-80 object-cover gallery-Image">
@@ -165,14 +183,6 @@ import ServiceSlider from './ServicesSlider.astro';
    <div id="modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
       <!-- Modal Content -->
       <div class="bg-white rounded-lg w-[90%] relative flex flex-col">
-         <div class="bg-white rounded-lg relative p-10 flex flex-col">
-            <button id="closeModal" class="absolute top-10 right-10 text-gray-500 hover:text-black text-[30px]">&times;</button>
-            <h2 class="text-3xl font-serif text-center mb-5 tracking-wider">Einen Termin buchen</h2>
-            <p class="text-gray-600 text-center">
-               Wähle deinen Wunschtermin aus den verfügbaren Zeiten.  
-               Nach der Buchung erhältst du eine Bestätigung per E-Mail – ich freue mich auf dich!
-            </p>
-         </div>
          <iframe src="https://www.beautinda.de/book/vEariYOYZxNiMYbFskNj6Ywtvzv2/orders" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:80vh;"></iframe>
       </div>
    </div>
