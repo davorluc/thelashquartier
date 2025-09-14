@@ -14,9 +14,10 @@ export const services = [
   {
     category: "Augenbrauen & Wimpernbehandlungen",
     items: [
+      { title: "Korean Lash Lift inkl. Pflege", desc: "Wimpernlifting ohne Kleber, auf Koreanische Art", price: "ab 65 €" },
       { title: "Wimpernlifting inkl. Pflege", desc: "Schwung & Pflege für deine Naturwimpern", price: "ab 50 €" },
       { title: "Brow Lift inkl. Pflege", desc: "Perfekt gestylte Brauen mit Pflege", price: "ab 50 €" },
-      { title: "Wimpern- & Brow Lift inkl. Pflege", desc: "Komplettbehandlung für einen natürlichen, gepflegten Look", price: "ab 70 €" }
+      { title: "Wimpern- & Brow Lift inkl. Pflege", desc: "Komplettbehandlung für einen natürlichen, gepflegten Look", price: "ab 70 €"}
     ]
   },
   {
