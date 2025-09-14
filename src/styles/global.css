@@ -54,7 +54,7 @@ footer {
 
 .image-track .gallery-Image {
   width: 33vw;
-  height: 35vmin;
+  height: 100%;
   object-fit: cover;
   object-position: 100% center;
 }
@@ -67,14 +67,13 @@ footer {
   transform: translate(0%, -50%);
   user-select: none;
   width: 3000px;
+  height: 45vmin;
 }
 
-@media (max-width: 1200px) {
-  .image-track .gallery-Image {
-    height: 60vmin;
-  }
+@media (max-width: 1000px) {
 
   .image-track {
     width: 350vw;
+    height: 70vmin;
   }
 }
