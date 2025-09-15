@@ -1,0 +1,16 @@
+---
+import ServiceSlider from '../components/ServicesSlider.astro';
+import { services } from '../data/services.js'; 
+---
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white overflow-hidden">
+   <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Unsere Leistungen</h2>
+      {services.map((cat, i) => (
+      <>
+      <h3 class="text-2xl font-serif mb-6">{cat.category}</h3>
+      <ServiceSlider services={cat.items} id={`swiper-${i}`} />
+      </>
+      ))}
+   </div>
+</section>

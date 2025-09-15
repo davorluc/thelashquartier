@@ -1,6 +1,4 @@
 ---
-import heroImage from '../assets/hero.jpeg';
-import aboutMeImg from '../assets/celina-1.jpeg';
 import client2 from '../assets/client-2.jpeg';
 import client3 from '../assets/client-3.jpeg';
 import client4 from '../assets/client-4.jpeg';
@@ -10,94 +8,8 @@ import impression3 from '../assets/impression-3.jpeg';
 import impression4 from '../assets/impression-4.jpeg';
 import impression5 from '../assets/impression-5.jpeg';
 import impression6 from '../assets/impression-6.jpeg';
-import logo from '../assets/tlq_logo_highres.png';
 import { Image } from 'astro:assets';
-import { services } from '../data/services.js'; 
-
-import ServiceSlider from './ServicesSlider.astro';
-
 ---
-<!-- Navigation -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <Image src={logo} class="w-[140px]" alt="The Lash Quartier Logo"/>
-    <div class="hidden md:flex space-x-8">
-      <a href="#home" class="nav-link">Willkommen</a>
-      <a href="#about" class="nav-link">Über uns</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#impressions" class="nav-link">Impressionen</a>
-    </div>
-
-    <!-- Mobile menu button -->
-  <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
-      <i class="fas fa-bars text-xl"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Menu (Slide) -->
-  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-1000 ease md:hidden bg-white px-6 shadow-lg">
-    <div class="flex flex-col space-y-4 py-4">
-      <a href="#home" class="nav-link">Willkommen</a>
-      <a href="#about" class="nav-link">Über uns</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#impressions" class="nav-link">Impressionen</a>
-    </div>
-  </div>
-</nav>
-<!-- Hero Section -->
-<section id="home" class="relative h-[80vh] flex items-center justify-center text-center pt-20 overflow-hidden">
-   <!-- Background Video -->
-   <Image src={heroImage} class="absolute inset-0 w-full h-full object-cover z-0" alt="Hero Image of Client that has her lashes done"/>
-   <!-- Dark Overlay -->
-   <div class="absolute inset-0 bg-black opacity-30"></div>
-   <!-- Content -->
-   <div class="relative z-20 max-w-3xl px-6 text-white">
-      <h1 class="text-4xl md:text-6xl font-serif font-light mb-6 tracking-wider">Your Look. Your Lashes.</h1>
-      <p class="text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">Maßgeschneidertes Lash- & Brow Design, präzises Permanent Make-up und hochwertige 1:1 Schulungen.</p>
-      <a href="#services" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition duration-300">Jetzt unsere Leistungen entdecken</a>
-   </div>
-</section>
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-50">
-   <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Über Mich</h2>
-      <div class="flex flex-col md:flex-row items-center gap-12">
-         <div class="md:w-1/2">
-            <div class="rounded-lg flex justify-center">
-               <Image src={aboutMeImg} 
-                  alt="Lash Technician" 
-                  class="object-cover rounded-lg transition duration-500 hover:scale-105 h-[500px] w-[400px]">
-            </div>
-         </div>
-         <div class="md:w-1/2">
-            <h3 class="text-2xl font-serif mb-6">Hi, mein Name ist Celina-Antonia und ich bin Gründerin von The Lash Quartier. </h3>
-            <p class="mb-4 leading-relaxed">Schon früh hat mich die Beauty-Welt fasziniert - nicht nur optisch, sondern auf einer tiefen, persönlichen Ebene. Schönheit ist für mich ein Gefühl von Selbstvertrauen, Ausdruck und innerer Stärke.
-</p>
-            <p class="mb-4 leading-relaxed">Mit The Lash Quartier habe ich einen Ort geschaffen, an dem Frauen sich nicht nur verschönern lassen, sondern auch verstanden fühlen.
-Jeder Look entsteht individuell – mit Feingefühl, Präzision und einer typgerechten Analyse deiner Augen- und Gesichtsform.</p>
-            <p class="mb-6 leading-relaxed">Mein Ziel ist es nicht, dich zu verändern, sondern deine natürliche Schönheit gezielt zu unterstreichen. Denn wir strahlen am meisten, wenn unser Inneres mit unserem Äußeren im Einklang ist.</p>
-            <p class="mb-6 leading-relaxed">In meinem Studio erwarten dich Qualität, Hygiene und echte Professionalität. Ich freue mich darauf, gemeinsam mit dir das Schönste aus dir herauszuholen. 
-</p>
-            <div class="flex space-x-4">
-               <a href="https://www.instagram.com/thelashquartier/" class="text-gray-600 hover:text-gray-900" aria-label="Instagram – The Lash Quartier"><i class="fab fa-instagram text-xl"></i></a>
-               <a href="https://www.tiktok.com/@thelashquartier" class="text-gray-600 hover:text-gray-900" aria-label="TikTok – The Lash Quartier"><i class="fab fa-tiktok text-xl"></i></a>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-<!-- Services Section -->
-<section id="services" class="py-20 bg-white overflow-hidden">
-   <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Unsere Leistungen</h2>
-      {services.map((cat, i) => (
-      <>
-      <h3 class="text-2xl font-serif mb-6">{cat.category}</h3>
-      <ServiceSlider services={cat.items} id={`swiper-${i}`} />
-      </>
-      ))}
-   </div>
-</section>
 <!-- Impressions Section -->
 <section id="impressions" class="py-20 bg-gray-50">
    <div class="container mx-auto px-6 relative">
