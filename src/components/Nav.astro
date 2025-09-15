@@ -1,0 +1,31 @@
+---
+import logo from '../assets/tlq_logo_highres.png';
+import { Image } from 'astro:assets';
+---
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <Image src={logo} class="w-[140px]" alt="The Lash Quartier Logo"/>
+    <div class="hidden md:flex space-x-8">
+      <a href="#home" class="nav-link">Willkommen</a>
+      <a href="#about" class="nav-link">Über uns</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#impressions" class="nav-link">Impressionen</a>
+    </div>
+
+    <!-- Mobile menu button -->
+  <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu (Slide) -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-1000 ease md:hidden bg-white px-6 shadow-lg">
+    <div class="flex flex-col space-y-4 py-4">
+      <a href="#home" class="nav-link">Willkommen</a>
+      <a href="#about" class="nav-link">Über uns</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#impressions" class="nav-link">Impressionen</a>
+    </div>
+  </div>
+</nav>
