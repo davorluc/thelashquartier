@@ -1,0 +1,33 @@
+---
+import {Image} from 'astro:assets';
+import aboutMeImg from '../assets/celina-1.jpeg'
+---
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+   <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-serif text-center mb-16 tracking-wider">Über Mich</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+         <div class="md:w-1/2">
+            <div class="rounded-lg flex justify-center">
+               <Image src={aboutMeImg} 
+                  alt="Lash Technician" 
+                  class="object-cover rounded-lg transition duration-500 hover:scale-105 h-[500px] w-[400px]">
+            </div>
+         </div>
+         <div class="md:w-1/2">
+            <h3 class="text-2xl font-serif mb-6">Hi, mein Name ist Celina-Antonia und ich bin Gründerin von The Lash Quartier. </h3>
+            <p class="mb-4 leading-relaxed">Schon früh hat mich die Beauty-Welt fasziniert - nicht nur optisch, sondern auf einer tiefen, persönlichen Ebene. Schönheit ist für mich ein Gefühl von Selbstvertrauen, Ausdruck und innerer Stärke.
+</p>
+            <p class="mb-4 leading-relaxed">Mit The Lash Quartier habe ich einen Ort geschaffen, an dem Frauen sich nicht nur verschönern lassen, sondern auch verstanden fühlen.
+Jeder Look entsteht individuell – mit Feingefühl, Präzision und einer typgerechten Analyse deiner Augen- und Gesichtsform.</p>
+            <p class="mb-6 leading-relaxed">Mein Ziel ist es nicht, dich zu verändern, sondern deine natürliche Schönheit gezielt zu unterstreichen. Denn wir strahlen am meisten, wenn unser Inneres mit unserem Äußeren im Einklang ist.</p>
+            <p class="mb-6 leading-relaxed">In meinem Studio erwarten dich Qualität, Hygiene und echte Professionalität. Ich freue mich darauf, gemeinsam mit dir das Schönste aus dir herauszuholen. 
+</p>
+            <div class="flex space-x-4">
+               <a href="https://www.instagram.com/thelashquartier/" class="text-gray-600 hover:text-gray-900" aria-label="Instagram – The Lash Quartier"><i class="fab fa-instagram text-xl"></i></a>
+               <a href="https://www.tiktok.com/@thelashquartier" class="text-gray-600 hover:text-gray-900" aria-label="TikTok – The Lash Quartier"><i class="fab fa-tiktok text-xl"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
