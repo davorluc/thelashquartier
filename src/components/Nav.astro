@@ -29,3 +29,26 @@ import { Image } from 'astro:assets';
     </div>
   </div>
 </nav>
+
+<script>
+// Mobile Menu Toggle (Slide)
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (!mobileMenuButton || !mobileMenu) {
+    console.warn("Mobile menu elements not found.");
+    return;
+  }
+
+  let isMenuOpen = false;
+
+  mobileMenuButton.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+
+    mobileMenu.classList.toggle('max-h-0', !isMenuOpen);
+    mobileMenu.classList.toggle('max-h-[400px]', isMenuOpen);
+    mobileMenu.setAttribute("aria-expanded", !isMenuOpen);
+  });
+});
+</script>

@@ -3,3 +3,16 @@
 <a id="back-to-top" href="#home" class="hidden fixed bottom-8 right-8 bg-gray-800 text-white w-12 h-12 rounded-full shadow-lg opacity-80 hover:opacity-100 transition-opacity duration-300 z-50 flex items-center justify-center">
 <i class="fas fa-arrow-up"></i>
 </a>
+
+<script>
+   // Back to Top Button
+   const backToTopButton = document.getElementById('back-to-top');
+   
+   window.addEventListener('scroll', () => {
+       if (window.pageYOffset > 300) {
+           backToTopButton.classList.remove('hidden');
+       } else {
+           backToTopButton.classList.add('hidden');
+       }
+   });
+</script>

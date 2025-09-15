@@ -14,3 +14,78 @@ import { services } from '../data/services.js';
       ))}
    </div>
 </section>
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+   const modal = document.getElementById("modal");
+   const openBtnsHTMLElement = document.getElementsByClassName("modal");
+   const closeBtn = document.getElementById("closeModal");
+
+  const openBtns = [...openBtnsHTMLElement];
+
+  for (const openBtn of openBtns) {
+     openBtn.addEventListener("click", (e) => {
+       e.preventDefault();
+       modal.classList.remove("hidden");
+     });
+  }
+   
+   closeBtn.addEventListener("click", () => {
+   modal.classList.add("hidden");
+   });
+   
+   // Optional: close modal when clicking outside of it
+   modal.addEventListener("click", (e) => {
+   if (e.target === modal) {
+   modal.classList.add("hidden");
+   }
+   });
+   });
+const track = document.getElementById("image-track");
+const impressions = document.getElementById("impressions");
+
+const handleOnDown = e => {
+  track.dataset.mouseDownAt = e.clientX;
+};
+
+const handleOnUp = () => {
+  track.dataset.mouseDownAt = "0";  
+  track.dataset.prevPercentage = track.dataset.percentage;
+};
+
+const handleOnMove = e => {
+  if (track.dataset.mouseDownAt === "0") return;
+
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+  const maxDelta = window.innerWidth / 2;
+
+  // Sensitivity factor: lower = less extreme movement
+  const sensitivity = window.innerWidth < 1000 ? 0.5 : 1;
+
+  const percentage = (mouseDelta / maxDelta) * -100 * sensitivity;
+  const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage || "0") + percentage;
+  const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+  track.dataset.percentage = nextPercentage;
+
+  track.animate({
+    transform: `translate(${nextPercentage}%, -50%)`
+  }, { duration: 1200, fill: "forwards" });
+
+  for (const image of track.getElementsByClassName("gallery-Image")) {
+    image.animate({
+      objectPosition: `${100 + nextPercentage}% center`
+    }, { duration: 1200, fill: "forwards" });
+  }
+};
+
+// Attach events to #impressions instead of window
+impressions.addEventListener("mousedown", e => handleOnDown(e));
+impressions.addEventListener("touchstart", e => handleOnDown(e.touches[0]));
+
+impressions.addEventListener("mouseup", e => handleOnUp(e));
+impressions.addEventListener("touchend", e => handleOnUp(e.touches[0]));
+
+impressions.addEventListener("mousemove", e => handleOnMove(e));
+impressions.addEventListener("touchmove", e => handleOnMove(e.touches[0]));
+</script>
