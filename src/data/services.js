@@ -21,17 +21,6 @@ export const services = [
     ]
   },
   {
-    category: "Permanent Make-Up",
-    items: [
-      { title: "Microblading", desc: "Feinste Härchenzeichnung für natürliche Augenbrauen", price: "270 €" },
-      { title: "Powderbrows", desc: "Softe Schattierungstechnik für volle Brauen", price: "290 €" },
-      { title: "Combi Brows", desc: "Kombination aus Microblading & Powderbrows", price: "310 €" },
-      { title: "Wimpernkranzverdichtung", desc: "Sanfte Betonung des Wimpernansatzes", price: "130 €" },
-      { title: "Lippenschattierung", desc: "Für definierte und volle Lippen", price: "300 €" },
-      { title: "PMU Remover", desc: "Entfernung unerwünschten Permanent Make-Ups", price: "80 €" }
-    ]
-  },
-  {
     category: "Schulungen",
     items: [
       { title: "The Lash Foundation", desc: "Erlerne alle Grundlagen der Classic Variante.", price: "599 €" },
