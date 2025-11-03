@@ -26,7 +26,7 @@ export const services = [
       { title: "The Lash Foundation", desc: "Erlerne alle Grundlagen der Classic Variante.", price: "699 €" },
       { title: "The Lash Advance", desc: "Erlerne Grundlagen der klassischen sowie Volumenvariante.", price: "1350 €" },
       { title: "The Lash Refinement", desc: "Weiterbildung für Erfahrene Stylistinnen.", price: "699 €" }
-      { title: "The Brow Lab", desc: "Meistere die Grundlagen der Augenbrauenbehandlung.", price: "699 €" }
+      { title: "The Brow Lab", desc: "Meistere die Grundlagen der Augenbrauenbehandlung.", price: "599 €" }
     ]
   },
 ];
