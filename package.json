@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.3",
+    "astro": "^5.16.5",
+    "prettier-plugin-astro": "^0.14.1",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11"
   }
