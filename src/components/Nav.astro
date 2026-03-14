@@ -1,28 +1,43 @@
 ---
-import logo from '../assets/tlq_logo_highres.png';
-import { Image } from 'astro:assets';
+import logo from "../assets/tlq_logo_highres.png";
+import { Image } from "astro:assets";
 ---
+
 <!-- Navigation -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300"
+>
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <Image src={logo} class="w-[140px]" alt="The Lash Quartier Logo"/>
+    <a href="/">
+      <Image src={logo} class="w-[140px]" alt="The Lash Quartier Logo" />
+    </a>
     <div class="hidden md:flex space-x-8">
-      <a href="#home" class="nav-link">Willkommen</a>
+      <a href="/" class="nav-link">Willkommen</a>
       <a href="#about" class="nav-link">Über uns</a>
       <a href="#services" class="nav-link">Services</a>
       <a href="#impressions" class="nav-link">Impressionen</a>
     </div>
 
     <!-- Mobile menu button -->
-  <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
+    <button
+      id="mobile-menu-button"
+      class="md:hidden focus:outline-none"
+      aria-label="Menü öffnen"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
       <i class="fas fa-bars text-xl"></i>
     </button>
   </div>
 
   <!-- Mobile Menu (Slide) -->
-  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-1000 ease md:hidden bg-white px-6 shadow-lg">
+  <div
+    id="mobile-menu"
+    class="max-h-0 overflow-hidden transition-all duration-1000 ease md:hidden bg-white px-6 shadow-lg"
+  >
     <div class="flex flex-col space-y-4 py-4">
-      <a href="#home" class="nav-link">Willkommen</a>
+      <a href="/" class="nav-link">Willkommen</a>
       <a href="#about" class="nav-link">Über uns</a>
       <a href="#services" class="nav-link">Services</a>
       <a href="#impressions" class="nav-link">Impressionen</a>
@@ -31,24 +46,25 @@ import { Image } from 'astro:assets';
 </nav>
 
 <script>
-// Mobile Menu Toggle (Slide)
-document.addEventListener('DOMContentLoaded', () => {
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // Mobile Menu Toggle (Slide)
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-  if (!mobileMenuButton || !mobileMenu) {
-    console.warn("Mobile menu elements not found.");
-    return;
-  }
+    if (!mobileMenuButton || !mobileMenu) {
+      console.warn("Mobile menu elements not found.");
+      return;
+    }
 
-  let isMenuOpen = false;
+    let isMenuOpen = false;
 
-  mobileMenuButton.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
+    mobileMenuButton.addEventListener("click", () => {
+      isMenuOpen = !isMenuOpen;
 
-    mobileMenu.classList.toggle('max-h-0', !isMenuOpen);
-    mobileMenu.classList.toggle('max-h-[400px]', isMenuOpen);
-    mobileMenu.setAttribute("aria-expanded", !isMenuOpen);
+      mobileMenu.classList.toggle("max-h-0", !isMenuOpen);
+      mobileMenu.classList.toggle("max-h-[400px]", isMenuOpen);
+      mobileMenu.setAttribute("aria-expanded", !isMenuOpen);
+    });
   });
-});
 </script>
+
