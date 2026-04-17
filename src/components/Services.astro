@@ -27,17 +27,20 @@ import { services } from '../data/services.js';
      openBtn.addEventListener("click", (e) => {
        e.preventDefault();
        modal.classList.remove("hidden");
+       document.body.style.overflow = "hidden";
      });
   }
    
    closeBtn.addEventListener("click", () => {
    modal.classList.add("hidden");
+   document.body.style.overflow = "";
    });
    
    // Optional: close modal when clicking outside of it
    modal.addEventListener("click", (e) => {
    if (e.target === modal) {
    modal.classList.add("hidden");
+   document.body.style.overflow = "";
    }
    });
    });
